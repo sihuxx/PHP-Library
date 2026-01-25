@@ -21,7 +21,7 @@ $user = $_SESSION["ss"] ?? false;
         <?php } else if ($user->admin == 1) { ?>
             <nav class="nav1">
                 <ul>
-                    <li><a href="#">책 관리</a></li>
+                    <li><a href="./bookAdmin.php">책 관리</a></li>
                 </ul>
                 <ul>
                     <li><a href="#">책 대여 유저 조회</a></li>

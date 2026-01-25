@@ -15,7 +15,7 @@
     <header>
       <div>
         <h1>서점 관리</h1>
-        <p>서점을 등록, 수정, 삭제하세요</p>
+        <p>서점을 조회, 등록, 수정, 삭제하세요</p>
       </div>
       <a href="./storeAdd.php">+ <span>서점 등록</span></a>
     </header>
@@ -33,12 +33,11 @@
               $admin_user = db::fetch("select * from user where idx = '$store->admin_idx'"); ?>
               <p class="store-admin">관리자: <?=$admin_user->id?></p>
             <?php } ?>
-
           </div>
         </div>
         <div class="store-btns">
           <a href="./storeEdit.php?idx=<?=$store->idx?>" class="btn">수정</a>
-          <a href="./storeDeleteAction.php?idx=<?=$store->idx?>"class="red-btn btn">삭제</a>
+          <a href="./storeDeleteAction.php?idx=<?=$store->idx?>" onclick="return confirm('정말 삭제하시겠습니까?')" class="red-btn btn">삭제</a>
         </div>
       </div>
      <?php } ?>
