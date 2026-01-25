@@ -32,7 +32,7 @@
         </div>
         <div class="store-btns">
           <a href="#">관리자 등록</a>
-          <a href="#">수정</a>
+          <a href="./storeEdit.php?idx=<?=$store->idx?>">수정</a>
           <a href="#">삭제</a>
         </div>
       </div>

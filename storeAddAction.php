@@ -10,7 +10,7 @@ $path = './images/stores/' . $file['name'];
 
 if(move_uploaded_file($file["tmp_name"], $path)) {
   db::exec("insert into stores(title, des, img) values('$title', '$des', '$path')");
-  alert("서점 등록에 성공하셨습니다");
+  alert("서점이 등록되었습니다");
   move('./storeAdmin.php');
 } else {
   alert("파일 업로드에 실패했습니다");

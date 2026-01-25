@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>서점 등록</title>
-  <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
-
 <body>
-  <?php
-  require_once './header.php';
-  $idx = $_GET["idx"];
-  $store = db::fetch("select * from stores where idx = '$idx'");
-  ?>
-  
+  <?php require_once './header.php' ?>
   <main class="form-box">
     <form action="./storeAddAction.php" method="post" enctype="multipart/form-data">
-      <h1 class="form-title">서점 정보 수정</h1>
+      <h1 class="form-title">서점 등록</h1>
       <div>
-        <img src="" alt="">
         <label for="file">서점 로고</label>
         <input type="file" name="file" id="file" required>
       </div>
@@ -35,5 +27,4 @@
     </form>
   </main>
 </body>
-
 </html>
