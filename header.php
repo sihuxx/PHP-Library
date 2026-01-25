@@ -33,7 +33,7 @@ $user = $_SESSION["ss"] ?? false;
                     <li><a href="./storeAdmin.php">서점 관리</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">회원 관리</a></li>
+                    <li><a href="./userAdmin.php">회원 관리</a></li>
                 </ul>
             </nav>
         <?php } else { ?>
@@ -60,7 +60,7 @@ $user = $_SESSION["ss"] ?? false;
             <nav>
                 <ul>
                     <li><a><?= $user->id ?></a></li>
-                    <span class="user-type">서점 관리자</span>
+                    <span class="user-type" style="background-color:#9cdc12">서점 관리자</span>
                 </ul>
                 <ul>
                     <li><a href="./logout.php">로그아웃</a></li>
@@ -70,7 +70,7 @@ $user = $_SESSION["ss"] ?? false;
             <nav>
                 <ul>
                     <li><a><?= $user->id ?></a></li>
-                    <span class="user-type">슈퍼 관리자</span>
+                    <span class="user-type" style="background-color:#f3e248">슈퍼 관리자</span>
                 </ul>
                 <ul>
                     <li><a href="./logout.php">로그아웃</a></li>

@@ -31,9 +31,9 @@
           </div>
         </div>
         <div class="store-btns">
-          <a href="#">관리자 등록</a>
-          <a href="./storeEdit.php?idx=<?=$store->idx?>">수정</a>
-          <a href="./storeDeleteAction.php?idx=<?=$store->idx?>">삭제</a>
+          <a href="#" class="white-btn btn">관리자 등록</a>
+          <a href="./storeEdit.php?idx=<?=$store->idx?>" class="btn">수정</a>
+          <a href="./storeDeleteAction.php?idx=<?=$store->idx?>"class="red-btn btn">삭제</a>
         </div>
       </div>
      <?php } ?>
