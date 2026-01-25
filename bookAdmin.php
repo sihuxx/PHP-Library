@@ -34,7 +34,7 @@
         </div>
         <div class="book-btns">
           <a href="./bookEdit.php?idx=<?=$book->idx?>" class="btn">수정</a>
-          <a href="#" class="btn red-btn">삭제</a>
+          <a href="./bookDeleteAction.php?idx=<?=$book->idx?>" onclick="return confirm('정말 삭제하시겠습니까?')" class="btn red-btn">삭제</a>
         </div>
       </div>
       <?php } ?>

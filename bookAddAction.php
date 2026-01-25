@@ -14,5 +14,5 @@ if (move_uploaded_file($file["tmp_name"], $path)) {
   move("./bookAdmin.php");
 } else {
   alert("파일 업로드에 실패했습니다");
-  // back();
+  back();
 }
