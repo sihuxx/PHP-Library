@@ -1,0 +1,20 @@
+* {margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box; color:  inherit;}
+
+/* 헤더 */
+header {width: 100%;height: 80px;background-color: white; position: fixed; top: 0;left: 0; display: flex;justify-content: center; z-index: 100;}
+header .header-content {width: 1200px;display: flex;justify-content: space-between;align-items: center;}
+header .header-content .logo img {width: 100px;}
+header .header-content nav {display: flex; align-items: center; justify-content: center;}
+header .header-content nav a {display: block; width: 120px;height: 50px;text-align: center;line-height: 50px;}
+header .header-content nav a:hover {color: #9cdc12;}
+
+/* 로그인/회원가입 */
+.sign-box {display: flex;justify-content: center;align-items: center;width: 100vw;height: 100vh; background-color: #f5f5f5;}
+.sign-box form { width: 450px; padding: 20px;background-color: white; border-radius: 10px;display: flex;justify-content: start;align-items: center; flex-direction: column; gap: 10px; position: relative;} 
+.sign-box .sign-title {color: #9cdc12; padding: 30px 0; font-size: 28px;}
+.sign-box form > div {display: flex; flex-direction: column; gap: 10px;}
+.sign-box form label {width: 80px;display: block;color: #333;font-size: 15px;}
+.sign-box form input {padding: 10px; width: 350px; border: 1px solid #b1b1b1; border-radius: 5px; transition: .3s;}
+.sign-box form input:focus {border: 1px solid #9cdc12; outline: unset;}
+.sign-box form button {padding: 10px;background-color: #9cdc12; color: white; font-size: 18px;border: 0;border-radius: 10px;margin-top: 60px;cursor: pointer;margin: 30px 0;}
+[class*="warning-text"] {color: red; font-size: 15px;}
