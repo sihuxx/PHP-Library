@@ -11,7 +11,7 @@
     require_once './header.php';
     $users = db::fetchAll("select * from user where super_admin = 0");
   ?>
-  <main class="admin-box">
+  <main class="view-box">
         <header>
       <div>
         <h1>회원 관리</h1>

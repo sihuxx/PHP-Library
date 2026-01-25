@@ -39,10 +39,10 @@ $user = $_SESSION["ss"] ?? false;
         <?php } else { ?>
             <nav class="nav1">
                 <ul>
-                    <li><a href="#">서점 조회</a></li>
+                    <li><a href="./storeList.php">서점 조회</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">마이 프로필</a></li>
+                    <li><a href="./myProfile.php">마이 프로필</a></li>
                 </ul>
             </nav>
         <?php } ?>

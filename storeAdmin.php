@@ -11,7 +11,7 @@
   require_once './header.php';
   $stores = db::fetchAll("select * from stores");
   ?>
-  <main class="admin-box">
+  <main class="view-box">
     <header>
       <div>
         <h1>서점 관리</h1>

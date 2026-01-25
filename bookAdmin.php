@@ -13,7 +13,7 @@
     $store = db::fetch("select * from stores where admin_idx = '$user->idx'");
     $books = db::fetchAll("select * from book where store_idx = '$store->idx'");
   ?>
-  <main class="admin-box">
+  <main class="view-box">
     <header>
       <div>
         <h1><?=$store->title?> 책 관리</h1>

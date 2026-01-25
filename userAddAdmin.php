@@ -14,7 +14,7 @@
   $idx = $_GET['idx'];
   $stores = db::fetchAll("select * from stores");
   ?>
-<main class="admin-box">
+<main class="view-box">
     <div class="stores">
     <?php foreach ($stores as $store) { ?>
       <div class="store">
