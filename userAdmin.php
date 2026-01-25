@@ -9,9 +9,15 @@
 <body>
   <?php
     require_once './header.php';
-    $users = db::fetchAll("select * from user");
+    $users = db::fetchAll("select * from user where super_admin = 0");
   ?>
   <main class="admin-box">
+        <header>
+      <div>
+        <h1>회원 관리</h1>
+        <p>회원들을 관리하세요</p>
+      </div>
+    </header>
     <table>
       <thead>
         <th>역할</th>
@@ -38,8 +44,8 @@
             <td><?=$user->email?></td>
             <td><?=$user->date?></td>
             <td class="btns">
-              <a href="" class="red-btn btn">탈퇴</a>
-              <a href="" class="white-btn btn">관리자 등록</a>
+              <a href="./userDeleteAction.php?idx=<?=$user->idx?>" class="red-btn btn">탈퇴</a>
+              <a href="./userAddAdmin.php?idx=<?=$user->idx?>" class="white-btn btn">관리자 등록</a>
             </td>
           </tr>
         <?php } ?>

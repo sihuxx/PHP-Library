@@ -26,7 +26,7 @@ img { object-fit: 100%;}
 .form-box form button {padding: 10px;background-color: #9cdc12; color: rgb(0, 0, 0); font-size: 16px;border: 0;border-radius: 10px;margin-top: 60px;cursor: pointer;margin: 30px 0;}
 
 /* 테이블 */
-table {border-collapse: collapse; background-color: white;width: 1200px;;text-align: left; border-radius: 10px;}
+table { margin-top: 50px; border-collapse: collapse; background-color: white;width: 1200px;;text-align: left; border-radius: 10px; box-shadow: 0px 0px 4px #cacaca;}
 table thead th { border-bottom: 1px solid #cacaca; height: 40px;padding: 20px;}
 table thead th {font-weight: 500;}
 table tbody tr {border-bottom: 1px solid #e0e0e0;}
@@ -41,7 +41,7 @@ table tbody td {font-size: 15px; padding: 20px;}
 
 /* 서점 관리 */
 .admin-box .stores {display: grid;grid-template-columns: repeat(3, 1fr);gap: 30px; width: 1200px;padding-top: 50px;}
-.admin-box .store {padding: 20px;background-color: white;display: flex;flex-direction: column;align-items: start;justify-content: space-between;border-radius: 10px;border: 1px solid #cacaca;}
+.admin-box .store {padding: 20px;background-color: white;display: flex;flex-direction: column;align-items: start;justify-content: space-between;border-radius: 10px;box-shadow: 0px 0px 4px #cacaca}
 .admin-box .store .store-content {display: flex;align-items: center; gap: 30px;}
 .admin-box .store .store-content > div {display: flex;flex-direction: column;gap: 2.5px;}
 .admin-box .store .store-content > div > .store-date {color: #808080;font-size: 15px;}

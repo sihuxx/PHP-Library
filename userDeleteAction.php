@@ -1,0 +1,11 @@
+<?php
+
+require_once './db.php';
+require_once './lib.php';
+
+$idx = $_GET["idx"];
+
+db::exec("delete from user where idx = '$idx'");
+
+alert("유저가 탈퇴 처리 되었습니다");
+move('./userAdmin.php');

@@ -26,12 +26,17 @@
           <img src="<?=$store->img?>" alt="<?=$store->title?>">
           <div>
             <h3 class="store-title"><?=$store->title?></h3>
+            <p class="store-date">등록일:<?=$store->create_at?></p>
             <p class="store-des"><?=$store->des?></p>
-            <p class="store-date"><?=$store->create_at?></p>
+            <?php
+            if($store->admin_idx != 0) {
+              $admin_user = db::fetch("select * from user where idx = '$store->admin_idx'"); ?>
+              <p class="store-admin">관리자: <?=$admin_user->id?></p>
+            <?php } ?>
+
           </div>
         </div>
         <div class="store-btns">
-          <a href="#" class="white-btn btn">관리자 등록</a>
           <a href="./storeEdit.php?idx=<?=$store->idx?>" class="btn">수정</a>
           <a href="./storeDeleteAction.php?idx=<?=$store->idx?>"class="red-btn btn">삭제</a>
         </div>
