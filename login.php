@@ -9,7 +9,7 @@
 <body>
   <?php require_once './header.php' ?>
 
-  <main class="sign-box log-box">
+  <main class="form-box">
     <form action="./userAction.php" method="post">
       <h1 class="sign-title">로그인</h1>
       <input type="hidden" name="type" value="login">

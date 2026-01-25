@@ -3,11 +3,49 @@ require_once './db.php';
 $user = $_SESSION["ss"] ?? false;
 ?>
 
-<header>
+<header class="header">
     <div class="header-content">
         <a href="./index.php" class="logo">
             <img src="./images/logo.png" alt="">
         </a>
+
+                <?php if (!$user) { ?>
+            <nav class="nav1">
+                <ul>
+                    <li><a href="#"></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#"></a></li>
+                </ul>
+            </nav>
+        <?php } else if ($user->admin == 1) { ?>
+            <nav class="nav1">
+                <ul>
+                    <li><a href="#">책 관리</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">책 대여 유저 조회</a></li>
+                </ul>
+                </nav>
+        <?php } else if ($user->super_admin == 1) { ?>
+            <nav class="nav1">
+                <ul>
+                    <li><a href="./storeAdmin.php">서점 관리</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">회원 관리</a></li>
+                </ul>
+            </nav>
+        <?php } else { ?>
+            <nav class="nav1">
+                <ul>
+                    <li><a href="#">서점 조회</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">마이 프로필</a></li>
+                </ul>
+            </nav>
+        <?php } ?>
 
         <?php if (!$user) { ?>
             <nav>
@@ -21,48 +59,33 @@ $user = $_SESSION["ss"] ?? false;
         <?php } else if ($user->admin == 1) { ?>
             <nav>
                 <ul>
-                    <li><a href="#">책 관리</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#">책 대여 현황 조회</a></li>
-                </ul>
-                <ul>
-                    <li><a><?= $user->name ?>님</a></li>
+                    <li><a><?= $user->id ?></a></li>
+                    <span class="user-type">서점 관리자</span>
                 </ul>
                 <ul>
                     <li><a href="./logout.php">로그아웃</a></li>
                 </ul>
             </nav>
         <?php } else if ($user->super_admin == 1) { ?>
-        <nav>
-            <ul>
-                <li><a href="#">서점 관리</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">회원 관리</a></li>
-            </ul>
-            <ul>
-                <li><a><?= $user->name ?>님</a></li>
-            </ul>
-            <ul>
-                <li><a href="./logout.php">로그아웃</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a><?= $user->id ?></a></li>
+                    <span class="user-type">슈퍼 관리자</span>
+                </ul>
+                <ul>
+                    <li><a href="./logout.php">로그아웃</a></li>
+                </ul>
+            </nav>
         <?php } else { ?>
-        <nav>
-            <ul>
-                <li><a href="#">서점 조회</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">마이 프로필</a></li>
-            </ul>
-            <ul>
-                <li><a><?= $user->name ?>님</a></li>
-            </ul>
-            <ul>
-                <li><a href="./logout.php">로그아웃</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a><?= $user->id ?></a></li>
+                    <span class="user-type">일반 유저</span>
+                </ul>
+                <ul>
+                    <li><a href="./logout.php">로그아웃</a></li>
+                </ul>
+            </nav>
         <?php } ?>
     </div>
 </header>

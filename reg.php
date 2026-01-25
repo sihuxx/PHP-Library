@@ -10,9 +10,9 @@
 
 <body>
   <?php require_once './header.php' ?>
-  <main class="sign-box reg-box">
+  <main class="form-box">
     <form action="./userAction.php" method="post">
-      <h1 class="sign-title">회원가입</h1>
+      <h1 class="form-title">회원가입</h1>
       <input type="hidden" name="type" value="reg">
       <div>
         <label for="id">아이디</label>
@@ -37,7 +37,7 @@
 
 </html>
 <script>
-  const form = document.querySelector(".reg-box");
+  const form = document.querySelector(".form-box");
 
   form.addEventListener("submit", (e) => {
     const id = document.querySelector("input[name='id']")

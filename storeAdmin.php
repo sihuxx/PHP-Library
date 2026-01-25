@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>서점 관리</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <?php
+  require_once './header.php';
+  $stores = db::fetchAll("select * from stores");
+  ?>
+  <main class="admin-box">
+    <header>
+      <div>
+        <h1>서점 관리</h1>
+        <p>서점을 등록, 수정, 삭제하세요</p>
+      </div>
+      <a href="./storeAdd.php">+ <span>서점 등록</span></a>
+    </header>
+    <div class="stores">
+     <?php foreach($stores as $store) { ?>
+       <div class="store">
+        <div class="store-content">
+          <img src="<?=$store->img?>" alt="<?=$store->title?>">
+          <div>
+            <h3 class="store-title"><?=$store->title?></h3>
+            <p class="store-des"><?=$store->des?></p>
+            <p class="store-date"><?=$store->create_at?></p>
+          </div>
+        </div>
+        <div class="store-btns">
+          <a href="#">관리자 등록</a>
+          <a href="#">수정</a>
+          <a href="#">삭제</a>
+        </div>
+      </div>
+     <?php } ?>
+    </div>
+  </main>
+</body>
+</html>

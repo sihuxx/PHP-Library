@@ -1,20 +1,44 @@
 * {margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box; color:  inherit;}
+body { background-color: #f5f5f5;}
+img { object-fit: 100%;}
 
 /* 헤더 */
-header {width: 100%;height: 80px;background-color: white; position: fixed; top: 0;left: 0; display: flex;justify-content: center; z-index: 100;}
-header .header-content {width: 1200px;display: flex;justify-content: space-between;align-items: center;}
-header .header-content .logo img {width: 100px;}
-header .header-content nav {display: flex; align-items: center; justify-content: center;}
-header .header-content nav a {display: block; width: 120px;height: 50px;text-align: center;line-height: 50px;}
-header .header-content nav a:hover {color: #9cdc12;}
+.header {width: 100%;height: 80px;background-color: white; position: fixed; top: 0;left: 0; display: flex;justify-content: center; z-index: 100; border-bottom: 1px solid #cacaca;}
+.header .header-content {width: 1200px;display: flex;justify-content: space-between;align-items: center;}
+.header .header-content .logo img {width: 100px;}
+.header .header-content nav {display: flex; align-items: center; justify-content: center; gap: 20px;}
+.header .header-content .nav1 {display: flex;align-items: center;justify-content: center;  background-color: #f5f5f5; border-radius: 10px;}
+.header .header-content .nav1 a {width: 200px;text-align: center;}
+.header .header-content nav a {display: block; padding: 10px; white-space: nowrap; }
+.header .header-content nav a:hover {color: #9cdc12;}
+.header .header-content nav > ul {display: flex; align-items: center; }
+.header .header-content .user-type {font-size: 12px;background-color: #f5f5f5;padding: 5px;border-radius: 10px;}
 
-/* 로그인/회원가입 */
-.sign-box {display: flex;justify-content: center;align-items: center;width: 100vw;height: 100vh; background-color: #f5f5f5;}
-.sign-box form { width: 450px; padding: 20px;background-color: white; border-radius: 10px;display: flex;justify-content: start;align-items: center; flex-direction: column; gap: 10px; position: relative;} 
-.sign-box .sign-title {color: #9cdc12; padding: 30px 0; font-size: 28px;}
-.sign-box form > div {display: flex; flex-direction: column; gap: 10px;}
-.sign-box form label {width: 80px;display: block;color: #333;font-size: 15px;}
-.sign-box form input {padding: 10px; width: 350px; border: 1px solid #b1b1b1; border-radius: 5px; transition: .3s;}
-.sign-box form input:focus {border: 1px solid #9cdc12; outline: unset;}
-.sign-box form button {padding: 10px;background-color: #9cdc12; color: white; font-size: 18px;border: 0;border-radius: 10px;margin-top: 60px;cursor: pointer;margin: 30px 0;}
-[class*="warning-text"] {color: red; font-size: 15px;}
+/* 폼 */
+.form-box {display: flex;justify-content: center;align-items: center;width: 100vw;height: 100vh; background-color: #f5f5f5;}
+.form-box form { width: 450px; padding: 20px;background-color: white; border-radius: 10px;display: flex;justify-content: start;align-items: center; flex-direction: column; gap: 10px; position: relative;} 
+.form-box .form-title {color: #9cdc12; padding: 30px 0; font-size: 28px;}
+.form-box form > div {display: flex; flex-direction: column; gap: 10px;}
+.form-box form label {width: 80px;display: block;color: #333;font-size: 15px;}
+.form-box form input {padding: 10px; width: 350px; border: 1px solid #b1b1b1; border-radius: 5px; transition: .3s;}
+.form-box form input:focus {border: 1px solid #9cdc12; outline: unset;}
+.form-box form button {padding: 10px;background-color: #9cdc12; color: rgb(0, 0, 0); font-size: 16px;border: 0;border-radius: 10px;margin-top: 60px;cursor: pointer;margin: 30px 0;}
+
+/* 슈퍼 관리자 */
+.admin-box {width: 100%;height: 100vh;display: flex;justify-content: start;align-items: center;flex-direction: column;padding-top: 200px;}
+.admin-box header {width: 1200px;display: flex;align-items: center;justify-content: space-between;}
+.admin-box header > div {display: flex;flex-direction: column; gap: 5px;}
+.admin-box header > div > p {color: #808080; font-size: 17px;}
+.admin-box header > a {border: 1px solid #76a809;background-color: #9cdc12;padding: 10px 12px;border-radius: 7.5px;display: flex;gap: 10px;font-size: 16px;}
+
+/* 서점 관리 */
+.admin-box .stores {display: grid;grid-template-columns: repeat(3, 1fr);gap: 30px; width: 1200px;padding-top: 50px;}
+.admin-box .store {padding: 20px;background-color: white;display: flex;flex-direction: column;align-items: start;justify-content: space-between;border-radius: 10px;border: 1px solid #cacaca;}
+.admin-box .store .store-content {display: flex;align-items: center; gap: 30px;}
+.admin-box .store .store-content > div {display: flex;flex-direction: column;gap: 2.5px;}
+.admin-box .store .store-content > div > .store-date {color: #808080;font-size: 15px;}
+.admin-box .store .store-content img {width: 100px;}
+.admin-box .store .store-btns {padding-top: 50px; display: flex; gap: 10px;}
+.admin-box .store .store-btns a {padding: 7.5px; background-color: #9cdc12; border: 1px solid #76a809; border-radius: 5px;}
+.admin-box .store .store-btns a:nth-child(1) {background-color: #f5f5f5; border: 1px solid #cacaca;}
+.admin-box .store .store-btns a:nth-child(3) {background-color: #ff6161; border: 1px solid #b41414;}
