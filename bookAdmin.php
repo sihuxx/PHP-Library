@@ -33,7 +33,7 @@
           <p class="book-stock">재고: <?=$book->count?>/<?=$book->stock?></p>
         </div>
         <div class="book-btns">
-          <a href="#" class="btn">수정</a>
+          <a href="./bookEdit.php?idx=<?=$book->idx?>" class="btn">수정</a>
           <a href="#" class="btn red-btn">삭제</a>
         </div>
       </div>
