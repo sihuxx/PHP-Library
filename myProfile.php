@@ -12,7 +12,7 @@
   <?php
   require_once './header.php';
   $user = $_SESSION["ss"];
-  $books = db::fetchAll("select b.*, u.* from book b inner join user_book u on b.idx = u.book_idx and u.user_idx = '$user->idx'")
+  $books = db::fetchAll("select b.*, u.*, b.idx as book_id from book b inner join user_book u on b.idx = u.book_idx and u.user_idx = '$user->idx'")
   ?>
 
   <main class="view-box">
@@ -30,8 +30,8 @@
           <p>가입 한 이메일: <?=$user->email?></p>
         </div>
         <div class="btns">
-          <a href="#" class="btn">닉네임 변경</a>
-          <a href="#" class="btn red-btn">회원 탈퇴</a>
+          <!-- <a href="#" class="btn">닉네임 변경</a> -->
+          <a href="./userDeleteAction.php?idx=<?=$user->idx?>" onclick="return confirm('정말 탈퇴하시겠습니까?')"  class="btn red-btn">회원 탈퇴</a>
         </div>
       </header>
       <div class="profile-content">
@@ -53,9 +53,10 @@
           <p class="book-des"><?=$book->des?></p>
           <p class="book-period">반납 기한: <?=$book->period?>일 남음</p>
         </div>
-        <div class="book-btns">
-          <a href="#" class="btn">반납</a>
-        </div>
+        <form method="post" action="./bookReturn.php" class="book-btns">
+          <input type="hidden" name="book_idx" value="<?=$book->book_id?>">
+          <button class="btn">반납</button>
+        </form>
       </div>
       <?php } ?>
       </div>
