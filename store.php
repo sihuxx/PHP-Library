@@ -41,6 +41,7 @@
           </div>
           <form method="post" action="bookRental.php" class="book-btns">
             <input type="hidden" name="book_idx" value="<?=$book->idx?>">
+            <input type="hidden" name="store_idx" value="<?=$store->idx?>">
             <button class="btn">대여</button>
           </form>
         </div>

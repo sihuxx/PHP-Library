@@ -12,6 +12,7 @@
   <?php
   require_once './header.php';
   $user = $_SESSION["ss"];
+  $books = db::fetchAll("select b.*, u.* from book b inner join user_book u on b.idx = u.book_idx and u.user_idx = '$user->idx'")
   ?>
 
   <main class="view-box">
@@ -35,20 +36,28 @@
       </header>
       <div class="profile-content">
         <h3>대여한 책</h3>
-        <table>
-          <thead>
-            <th>서점</th>
-            <th>책 이름</th>
-            <th>대여기간</th>
-            <th>상태</th>
-            <th>관리</th>
-          </thead>
-          <tbody>
-            foreach($books as $book) {
-              
-            }
-          </tbody>
-        </table>
+      </div>
+      <div class="books">
+        <?php foreach($books as $book) { ?>
+        <div class="book">
+           <?php if($book->period > 7) { ?>
+          <span class="book-type red-btn btn">연체됨</span>
+          <?php } else { ?>
+          <span class="book-type white-btn btn">대여 중</span>
+            <?php }?>
+        <div class="book-img">
+          <img src="<?=$book->img?>" alt="<?=$book->title?>">
+        </div>
+        <div class="book-content">
+          <h3 class="book-title"><?=$book->title?></h3>
+          <p class="book-des"><?=$book->des?></p>
+          <p class="book-period">반납 기한: <?=$book->period?>일 남음</p>
+        </div>
+        <div class="book-btns">
+          <a href="#" class="btn">반납</a>
+        </div>
+      </div>
+      <?php } ?>
       </div>
     </div>
   </main>
