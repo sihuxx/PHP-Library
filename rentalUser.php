@@ -17,21 +17,35 @@
     $start_week = date("w", $time);
     $total_day = date("t", $time);
     $total_week = ceil(($total_day + $start_week) / 7);  
+    $users = db::fetchAll("select u.*, ub.*, u.idx as user_id from user u inner join user_book ub on u.idx = ub.user_idx where ub.rental_date like '$year-$month-%'");
   ?>
+<div class="background">
+    <div class="rental-user">
+      <div class="btn red-btn close-btn">닫기</div>
+  </div>
+</div>
  <main class="view-box">
-   <?php echo "$year 년 $month 월" ?>
-  <?php if ($month == 1) { ?>
-    <a href="?year=<?=$year-1?>&month=12">이전 달</a>
-  <?php } else { ?> 
-    <a href="?year=<?=$year?>&month=<?=$month - 1?>">이전 달</a>
-  <?php } ?>
-
+  <header>
+    <div>
+      <h1>책 대여 유저 조회 (캘린더)</h1>
+      <p>캘린더로 책 대여 유저를 조회하세요</p>
+    </div>
+  </header>
+  <div class="calender-control">
+    <?php if ($month == 1) { ?>
+    <a href="?year=<?=$year-1?>&month=12">&lt;</a>
+    <?php } else { ?> 
+    <a href="?year=<?=$year?>&month=<?=$month - 1?>">&lt;</a>
+    <?php } ?>
+    
+    <?php echo "$year 년 $month 월" ?>
   <?php if ($month == 12) { ?>
-    <a href="?year=<?=$year+1?>&month=1">다음 달</a>
+    <a href="?year=<?=$year+1?>&month=1">&lt;</a>
   <?php } else { ?> 
-    <a href="?year=<?=$year?>&month=<?=$month + 1?>">다음 달</a>
+    <a href="?year=<?=$year?>&month=<?=$month + 1?>">&gt;</a>
   <?php } ?>
-  <table>
+</div>
+  <table class="calender-table">
     <thead>
       <th>일</th>
       <th>월</th>
@@ -57,4 +71,28 @@
   </table>
  </main>
 </body>
+<script>
+  const closeBtn = document.querySelector(".close-btn")
+  const openBtn = document.querySelector(".open-btn")
+
+  closeBtn.addEventListener("click", () => {
+    closeBtn.closest(".background").style.display = 'none'
+  })
+
+  function openRental() {
+   const td = document.querySelectorAll("table tbody td") 
+   const year = <?= $year ?>
+   const month = <?= $month ?>
+
+   td.forEach(e => {
+    e.addEventListener('click', (event) => {
+      const day = event.target.textContent.trim()
+
+      const targetDay = `${year}-${month}-${day}`
+    })
+   })
+  }
+
+  openRental();
+</script>
 </html>
