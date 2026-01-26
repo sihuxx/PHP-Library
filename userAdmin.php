@@ -18,7 +18,7 @@
         <p>회원들을 관리하세요</p>
       </div>
     </header>
-    <table>
+    <table class="user-table">
       <thead>
         <th>역할</th>
         <th>아이디</th>

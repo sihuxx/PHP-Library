@@ -24,7 +24,7 @@ $user = $_SESSION["ss"] ?? false;
                     <li><a href="./bookAdmin.php">책 관리</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">책 대여 유저 조회</a></li>
+                    <li><a href="./rentalUser.php">책 대여 유저 조회</a></li>
                 </ul>
                 </nav>
         <?php } else if ($user->super_admin == 1) { ?>
