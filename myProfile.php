@@ -29,9 +29,9 @@
           <p>가입 한 이메일: <?=$user->email?></p>
         </div>
         <div class="btns">
-          <a href="#">닉네임 변경</a>
-          <a href="#">회원 탈퇴</a>
-          </div>
+          <a href="#" class="btn">닉네임 변경</a>
+          <a href="#" class="btn red-btn">회원 탈퇴</a>
+        </div>
       </header>
       <div class="profile-content">
         <h3>대여한 책</h3>
@@ -39,12 +39,14 @@
           <thead>
             <th>서점</th>
             <th>책 이름</th>
-            <th>대역기간</th>
+            <th>대여기간</th>
             <th>상태</th>
             <th>관리</th>
           </thead>
           <tbody>
-
+            foreach($books as $book) {
+              
+            }
           </tbody>
         </table>
       </div>

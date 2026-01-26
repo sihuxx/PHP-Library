@@ -13,7 +13,7 @@
   require_once './header.php';
   $stores = db::fetchAll("select * from stores");
   ?>
-  <div class="view-box">
+  <main class="view-box">
     <header>
       <div>
         <h1>서점 조회</h1>
@@ -34,13 +34,13 @@
             </div>
           </div>
           <div class="store-btns">
-            <a href="" class="btn">구경하기</a>
+            <a href="./store.php?idx=<?=$store->idx?>" class="btn">구경하기</a>
             <p><?=count($books)?>권의 책</p>
           </div>
         </div>
       <?php } ?>
     </div>
-  </div>
+  </main>
 </body>
 
 </html>
