@@ -17,7 +17,7 @@
     <header>
       <div>
         <h1><?=$store->title?> 책 관리</h1>
-        <p><?=$store->title?>의 책을 조회, 등록, 수정, 삭제하세요</p>
+        <p><?=$store->title?>의 책을 조회, 등록, 수정, 삭제하세요.</p>
       </div>
       <a href="./bookAdd.php?idx=<?=$store->idx?>">+ <span>책 등록</span></a>
     </header>

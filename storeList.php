@@ -17,7 +17,7 @@
     <header>
      <div>
        <h1>서점 조회</h1>
-      <p>서점을 조회하고 책을 대여해보세요</p>
+      <p>서점을 조회하고 책을 대여해보세요.</p>
      </div>
     </header>
     <div class="stores">

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>책 대여 유저 조회</title>
+  <title>책 대여 유저 조회 선택</title>
   <link rel="stylesheet" href="./style/style.css">
   <link rel="stylesheet" href="./fontawesome/css/font-awesome.css">
 </head>
@@ -17,7 +17,7 @@
     <header>
       <div>
         <h1>책 대여 유저 조회</h1>
-        <p>조회할 방법을 선택하세요</p>
+        <p>조회할 방법을 선택하세요.</p>
       </div>
     </header>
     <div class="choose-box">

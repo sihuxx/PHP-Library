@@ -13,6 +13,5 @@ if(db::fetch("select * from stores where idx = '$store_idx' and admin_idx is nul
   move("./userAdmin.php");
 }
 
-
 alert("서점 관리자가 추가되었습니다");
 move("./userAdmin.php");

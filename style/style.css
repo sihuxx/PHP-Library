@@ -29,7 +29,7 @@ img { object-fit: cover;}
 .header .header-content .nav1 {display: flex;align-items: center;justify-content: center;  background-color: #f5f5f5; border-radius: 10px;}
 .header .header-content .nav1 a {width: 200px;text-align: center;}
 .header .header-content nav a {display: block; padding: 10px; white-space: nowrap; }
-.header .header-content nav a:hover {color: #9cdc12;}
+.header .header-content nav a:hover {color: #6d9b0b;}
 .header .header-content nav > ul {display: flex; align-items: center; }
 .user-type {white-space: nowrap; font-size: 12px;background-color: #f5f5f5;padding: 5px;border-radius: 10px;}
 
@@ -66,7 +66,7 @@ img { object-fit: cover;}
 .view-box .store .store-content {display: flex;align-items: center; gap: 30px;}
 .view-box .store .store-content > div {display: flex;flex-direction: column;gap: 5px;}
 .view-box .store .store-content > div > .store-date {color: #808080;font-size: 15px;}
-.view-box .store .store-content img {width: 100px;}
+.view-box .store .store-content img {width: 100px;height: 100px;}
 .view-box .store .store-btns {padding-top: 50px; display: flex; align-items: center;gap: 15px;}
 
 /* 책 관리 */
@@ -93,9 +93,9 @@ img { object-fit: cover;}
 
 /* 캘린더 */
 .calender-table { border-collapse: collapse; background-color: white;width: 1200px;;text-align: left; border-radius: 10px; box-shadow: 0px 0px 4px #cacaca;}
-.calender-table thead th { border-bottom: 1px solid #cacaca; height: 40px;padding: 20px; font-weight: 500;text-align: center;}
+.calender-table thead th {text-align: center; border-bottom: 1px solid #cacaca; height: 40px;padding: 20px; font-weight: 500;}
 .calender-table tbody tr {border-bottom: 1px solid #e0e0e0;}
-.calender-table tbody td {font-size: 15px; width: 100px;height: 100px;padding: 10px;text-align: center;}
+.calender-table tbody td { text-align: center;font-size: 15px; width: 100px;height: 100px;padding: 10px;}
 .table-control {width: 1200px;padding: 15px;display: flex;justify-content: space-between;align-items: center;margin: 10px 0; background-color: white;box-shadow: 0px 0px 4px #cacaca;border-radius: 10px; }
 .is-rental {z-index: 10;position: relative;}
 .is-rental::before { margin: 0 auto 2px; content: "";display: block;width: 8px;height: 8px;border-radius: 50%;background-color: #9cdc12;}

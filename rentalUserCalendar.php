@@ -36,7 +36,7 @@
     <header>
       <div>
         <h1>책 대여 유저 조회 (캘린더)</h1>
-        <p>캘린더로 책 대여 유저를 조회하세요</p>
+        <p>캘린더로 책 대여 유저를 조회하세요.</p>
       </div>
     </header>
     <div class="table-control" style="margin: 30px 0">

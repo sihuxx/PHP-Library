@@ -15,7 +15,7 @@
     <header>
       <div>
         <h1>서점 관리</h1>
-        <p>서점을 조회, 등록, 수정, 삭제하세요</p>
+        <p>서점을 조회, 등록, 수정, 삭제하세요.</p>
       </div>
       <a href="./storeAdd.php">+ <span>서점 등록</span></a>
     </header>

@@ -20,7 +20,7 @@
     <header>
       <div>
         <h1>책 대여 유저 조회 (표)</h1>
-        <p>표로 책 대여 유저를 조회하세요</p>
+        <p>표로 책 대여 유저를 조회하세요.</p>
       </div>
     </header>
     <table class="nomal-table">
