@@ -29,7 +29,8 @@
       <h3>도서 목록</h3>
     </div>
     <div class="books">
-      <?php foreach ($books as $book) { ?>
+     <?php if(count($books) > 0) { ?>
+       <?php foreach ($books as $book) { ?>
         <div class="book">
           <?php if($book->count > 0) { ?>
           <div class="book-img">
@@ -59,6 +60,9 @@
          <?php } ?>
         </div>
       <?php } ?>
+     <?php } else { ?>
+      <p class="no-book-msg">도서가 존재하지 않습니다.</p>
+     <?php } ?>
     </div>
   </main>
 </body>
