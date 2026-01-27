@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>책 대여 유저 조회</title>
+  <title>책 대여 유저 조회 (캘린더)</title>
   <link rel="stylesheet" href="./style/style.css">
 </head>
 
@@ -19,7 +19,11 @@
   $start_week = date("w", $time);
   $total_day = date("t", $time);
   $total_week = ceil(($total_day + $start_week) / 7);
-  $users = db::fetchAll("select u.*, ub.*, u.idx as user_id from user u inner join user_book ub on u.idx = ub.user_idx where ub.rental_date like '$year-$month-%' group by u.idx, ub.rental_date");
+  $users = db::fetchAll("select u.*, ub.*, u.idx as user_id 
+  from user u inner join user_book ub 
+  on u.idx = ub.user_idx 
+  where ub.rental_date like '$year-$month-%' 
+  group by u.idx, ub.rental_date");
   ?>
   <div class="background">
     <div class="rental-user-modal">
@@ -35,7 +39,7 @@
         <p>캘린더로 책 대여 유저를 조회하세요</p>
       </div>
     </header>
-    <div class="calender-control">
+    <div class="table-control">
       <?php if ($month == 1) { ?>
         <a href="?year=<?= $year - 1 ?>&month=12">&lt;</a>
       <?php } else { ?>
@@ -110,6 +114,8 @@
   }
 
   function openRental() {
+    console.log(userData);
+    
     rentalDate();
 
     tds.forEach(td => {
@@ -143,8 +149,7 @@
         };
         modalContent.innerHTML = htmlContent;
         background.style.display = 'flex';
-        modal.style.transform = 'transform: translateY(20px)'
-        modalTitle.textContent = `${year}년 ${month}월 ${day}일 대여 기록`
+        modalTitle.textContent = `${year}년 ${month}월 ${day}일 대여 기록`;
       });
     });
   };
