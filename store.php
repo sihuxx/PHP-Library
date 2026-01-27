@@ -31,19 +31,32 @@
     <div class="books">
       <?php foreach ($books as $book) { ?>
         <div class="book">
+          <?php if($book->count > 0) { ?>
           <div class="book-img">
             <img src="<?= $book->img ?>" alt="<?= $book->title ?>">
           </div>
+          <?php } else { ?>
+          <div class="no-stock-img">
+            <div class="book-background">✖</div>
+            <img src="<?= $book->img ?>" alt="<?= $book->title ?>">
+          </div>
+          <?php } ?>
           <div class="book-content">
             <h3 class="book-title"><?= $book->title ?></h3>
             <p class="book-des"><?= $book->des ?></p>
             <p class="book-stock">재고: <?= $book->count ?>/<?= $book->stock ?></p>
           </div>
-          <form method="post" action="bookRental.php" class="book-btns">
-            <input type="hidden" name="book_idx" value="<?=$book->idx?>">
-            <input type="hidden" name="store_idx" value="<?=$store->idx?>">
-            <button class="btn">대여</button>
+         <?php if($book->count > 0) { ?>
+           <form method="post" action="bookRental.php" class="book-btns">
+            <input type="hidden" name="book_idx" value="<?= $book->idx ?>">
+            <input type="hidden" name="store_idx" value="<?= $store->idx ?>">
+            <button class="btn" >대여</button>
           </form>
+        <?php } else { ?>
+           <div class="book-btns">
+            <button class="btn white-btn" onclick="alert('재고가 없는 책입니다.')">대여</button>
+           </div>
+         <?php } ?>
         </div>
       <?php } ?>
     </div>

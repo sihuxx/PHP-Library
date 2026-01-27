@@ -11,7 +11,12 @@
 <body>
   <?php
   require_once './header.php';
+  require_once './lib.php';
   $idx = $_GET['idx'];
+  if(db::fetch("select * from stores where admin_idx = '$idx'")) {
+    alert("이미 서점 관리자로 등록된 유저입니다");
+    move("./userAdmin.php");
+  }
   $stores = db::fetchAll("select * from stores");
   ?>
 <main class="view-box">

@@ -39,18 +39,18 @@
         <p>캘린더로 책 대여 유저를 조회하세요</p>
       </div>
     </header>
-    <div class="table-control">
+    <div class="table-control" style="margin: 30px 0">
       <?php if ($month == 1) { ?>
-        <a href="?year=<?= $year - 1 ?>&month=12">&lt;</a>
+        <a class="btn white-btn" href="?year=<?= $year - 1 ?>&month=12">&lt;</a>
       <?php } else { ?>
-        <a href="?year=<?= $year ?>&month=<?= $month - 1 ?>">&lt;</a>
+        <a class="btn white-btn" href="?year=<?= $year ?>&month=<?= $month - 1 ?>">&lt;</a>
       <?php } ?>
 
       <?php echo "$year 년 $month 월" ?>
       <?php if ($month == 12) { ?>
-        <a href="?year=<?= $year + 1 ?>&month=1">&lt;</a>
+        <a class="btn white-btn" href="?year=<?= $year + 1 ?>&month=1">&lt;</a>
       <?php } else { ?>
-        <a href="?year=<?= $year ?>&month=<?= $month + 1 ?>">&gt;</a>
+        <a class="btn white-btn" href="?year=<?= $year ?>&month=<?= $month + 1 ?>">&gt;</a>
       <?php } ?>
     </div>
     <table class="calender-table">

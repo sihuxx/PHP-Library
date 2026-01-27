@@ -45,7 +45,11 @@
             <td><?=$user->date?></td>
             <td class="btns">
               <a href="./userDeleteAction.php?idx=<?=$user->idx?>" onclick="return confirm('정말 삭제하시겠습니까?')" class="red-btn btn">탈퇴</a>
+              <?php if($user->admin == 1){ ?>
+              <a href="./userAddAdmin.php?idx=<?=$user->idx?>" class="white-btn btn">관리자 해제</a>
+              <?php } else { ?>
               <a href="./userAddAdmin.php?idx=<?=$user->idx?>" class="white-btn btn">관리자 등록</a>
+              <?php } ?>
             </td>
           </tr>
         <?php } ?>
