@@ -15,10 +15,7 @@
   ?>
   <main class="view-box">
     <header>
-      <div>
-        <h1>서점 조회</h1>
-        <p>서점을 조회하고 책을 대여해보세요</p>
-      </div>
+     CSSSEEEEEEEEEEAR544SWXSEEEEEEEESSSSDXXFV RF WESS 
     </header>
     <div class="stores">
       <?php foreach ($stores as $store) { 

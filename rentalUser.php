@@ -17,11 +17,13 @@
     $start_week = date("w", $time);
     $total_day = date("t", $time);
     $total_week = ceil(($total_day + $start_week) / 7);  
-    $users = db::fetchAll("select u.*, ub.*, u.idx as user_id from user u inner join user_book ub on u.idx = ub.user_idx where ub.rental_date like '$year-$month-%'");
+    $users = db::fetchAll("select u.*, ub.*, u.idx as user_id from user u inner join user_book ub on u.idx = ub.user_idx where ub.rental_date like '$year-$month-%' group by u.idx, ub.rental_date");
   ?>
 <div class="background">
-    <div class="rental-user">
+    <div class="rental-user-modal">
       <div class="btn red-btn close-btn">닫기</div>
+      <div class="title-date"></div>
+      <div class="rental-user-content"></div>
   </div>
 </div>
  <main class="view-box">
@@ -72,27 +74,61 @@
  </main>
 </body>
 <script>
-  const closeBtn = document.querySelector(".close-btn")
-  const openBtn = document.querySelector(".open-btn")
+  const userData = <?= json_encode($users) ?>;
+  const closeBtn = document.querySelector(".close-btn");
+  const modalContent = document.querySelector(".rental-user-content");
+  const modal = document.querySelector(".rental-user-modal");
+  const modalTitle = document.querySelector(".title-date")
+  const background = document.querySelector(".background");
+  const tds = document.querySelectorAll("table tbody td") ;
 
   closeBtn.addEventListener("click", () => {
-    closeBtn.closest(".background").style.display = 'none'
-  })
+    background.style.display = 'none';
+  });
 
-  function openRental() {
-   const td = document.querySelectorAll("table tbody td") 
-   const year = <?= $year ?>
-   const month = <?= $month ?>
-
-   td.forEach(e => {
-    e.addEventListener('click', (event) => {
-      const day = event.target.textContent.trim()
-
-      const targetDay = `${year}-${month}-${day}`
-    })
-   })
+  function pad(number) {
+    return number.toString().padStart(2, '0');
   }
-
+  
+  function openRental() {
+    console.log(userData);
+    
+    const year = <?= $year ?>;
+    const month = <?= $month ?>;
+    
+    tds.forEach(td => {
+      td.addEventListener('click', (event) => {
+        
+      const day = event.currentTarget.textContent.trim();
+      
+      if(!day) return;
+      
+      const targetDate = `${year}-${pad(month)}-${pad(day)}`;
+      const filterData = userData.filter(user => user.rental_date == targetDate);
+      
+      let htmlContent = "";
+      
+      if(filterData.length > 0 ) {
+        filterData.forEach(user => {
+          htmlContent += `
+           <div>
+            <span>${user.name}</span>
+            <span>${user.id}</span>
+           </div>
+          `;
+        });
+      } else {
+        htmlContent += `
+        <p>대여 기록이 없습니다</p>
+        `;
+      };
+      modalContent.innerHTML = htmlContent;
+      background.style.display = 'flex';
+      modal.style.transform = 'transform: translateY(20px)'
+      modalTitle.textContent = `${year}년 ${month}월 ${day}일 대여 유저`
+    });
+   });
+  };
   openRental();
 </script>
 </html>
