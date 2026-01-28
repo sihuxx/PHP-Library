@@ -11,6 +11,8 @@
 <body>
   <?php
   require_once './header.php';
+    require_once './lib.php';
+  checkUser("super_admin");
   $idx = $_GET["idx"];
   $store = db::fetch("select * from stores where idx = '$idx'");
   ?>
@@ -22,7 +24,7 @@
       <div>
         <img src="<?=$store->img?>" alt="<?=$store->title?>">
         <label for="file">서점 로고</label>
-        <input type="file" name="file" id="file" required>
+        <input type="file" name="file" id="file">
       </div>
       <div>
         <label for="title">서점 이름</label>

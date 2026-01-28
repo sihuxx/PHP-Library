@@ -9,6 +9,8 @@
 <body>
   <?php
     require_once './header.php';
+    require_once './lib.php';
+    checkUser("admin");
     $user = $_SESSION["ss"];
     $store = db::fetch("select * from stores where admin_idx = '$user->idx'");
     $books = db::fetchAll("select * from book where store_idx = '$store->idx'");

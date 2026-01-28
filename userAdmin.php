@@ -9,6 +9,8 @@
 <body>
   <?php
     require_once './header.php';
+      require_once './lib.php';
+  checkUser("super_admin");
     $users = db::fetchAll("select * from user where super_admin = 0");
   ?>
   <main class="view-box">

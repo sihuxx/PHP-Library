@@ -32,7 +32,8 @@
     <div class="profile" style="padding-bottom:100px;">
       <h3>대여한 책</h3>
       <div class="books">
-        <?php foreach ($books as $book) {
+       <?php if(count($books) > 0) { ?>
+         <?php foreach ($books as $book) {
           $store = db::fetch("select * from stores where idx = '$book->store_idx'");
           ?>
           <div class="book">
@@ -57,10 +58,14 @@
             </form>
           </div>
         <?php } ?>
+       <?php } else { ?>
+        <p>대여 중인 책이 없습니다.</p>
+       <?php } ?>
       </div>
       <h3>대여 기록</h3>
       <div class="books">
-        <?php foreach ($returnBooks as $book) { 
+        <?php if(count($returnBooks) > 0) { ?>
+          <?php foreach ($returnBooks as $book) { 
           $store = db::fetch("select * from stores where idx = '$book->store_idx'");?>
           <div class="book">
             <span class="book-type white-btn btn">반납함</span>
@@ -74,6 +79,9 @@
               <p class="book-date">대여일: <?= $book->rental_date ?></p>
             </div>
           </div>
+        <?php } ?>
+        <?php } else { ?>
+          <p>대여한 책이 없습니다.</p>
         <?php } ?>
       </div>
     </div>

@@ -12,6 +12,7 @@
   <?php
   require_once './header.php';
   require_once './lib.php';
+  checkUser("super_admin");
   $idx = $_GET['idx'];
   if(db::fetch("select * from stores where admin_idx = '$idx'")) {
     alert("이미 서점 관리자로 등록된 유저입니다");

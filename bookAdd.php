@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-  <?php require_once './header.php' ?>
+  <?php
+  require_once './header.php';
+  require_once './lib.php';
+  checkUser("admin");
+  ?>
   <main class="form-box">
     <form action="./bookAddAction.php" method="post" enctype="multipart/form-data">
       <input type="hidden" name="store_idx" value="<?=$_GET["idx"]?>">

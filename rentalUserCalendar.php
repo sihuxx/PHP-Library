@@ -11,6 +11,8 @@
 <body>
   <?php
   require_once './header.php';
+  require_once './lib.php';
+  checkUser("admin");
   $year = isset($_GET['year']) ? $_GET["year"] : date('Y');
   $month = isset($_GET['month']) ? $_GET["month"] : date('m');
 
@@ -115,7 +117,7 @@
 
   function openRental() {
     console.log(userData);
-    
+
     rentalDate();
 
     tds.forEach(td => {

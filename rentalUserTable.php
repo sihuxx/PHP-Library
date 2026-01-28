@@ -11,6 +11,8 @@
 <body>
   <?php
   require_once './header.php';
+  require_once './lib.php';
+  checkUser("admin");
   $user = db::fetchAll("select u.*, ub.*, b.title, u.idx as user_id
     from user u inner join user_book ub
     on u.idx = ub.user_idx

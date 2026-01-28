@@ -13,6 +13,7 @@ if(move_uploaded_file($file["tmp_name"], $path)) {
   alert("서점 정보가 수정되었습니다");
   move('./storeAdmin.php');
   } else {
-    alert("파일 업로드에 실패했습니다");
-    back();
+    db::exec("update stores set title = '$title', des = '$des' where idx = '$idx'");
+    alert("서점 정보가 수정되었습니다");
+    move('./storeAdmin.php');
 }

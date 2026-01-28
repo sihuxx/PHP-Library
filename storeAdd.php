@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>서점 등록</title>
-    <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body>
-  <?php require_once './header.php' ?>
+  <?php require_once './header.php';
+  require_once './lib.php';
+  checkUser("super_admin");
+  ?>
   <main class="form-box">
     <form action="./storeAddAction.php" method="post" enctype="multipart/form-data">
       <h1 class="form-title">서점 등록</h1>
@@ -27,4 +32,5 @@
     </form>
   </main>
 </body>
+
 </html>

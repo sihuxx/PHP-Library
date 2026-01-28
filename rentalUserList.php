@@ -12,6 +12,8 @@
 <body>
   <?php
   require_once './header.php';
+  require_once './lib.php';
+  checkUser("admin");
   ?>
   <main class="view-box">
     <header>
@@ -23,9 +25,9 @@
     <div class="choose-box">
       <div>
         <div>
-        <i class="fa fa-calendar-o fa-2x"></i>
-        <h3>캘린더</h3>
-        <p>날짜 별 책 대여 유저를 <br> 조회하세요.</p>
+          <i class="fa fa-calendar-o fa-2x"></i>
+          <h3>캘린더</h3>
+          <p>날짜 별 책 대여 유저를 <br> 조회하세요.</p>
         </div>
         <a href="./rentalUserCalendar.php" class="btn">조회하기</a>
       </div>
