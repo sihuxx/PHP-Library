@@ -12,8 +12,8 @@ img { object-fit: cover;}
 [class*='btns'] {display: flex;gap: 10px;}
 .btn {cursor: pointer;padding: 7.5px; transition: .3s; background-color: #9cdc12; border: 1px solid #76a809; border-radius: 5px; text-align: center;}
 .btn:hover {background-color: #a1df1b; }
-.white-btn {background-color: #f5f5f5; border: 1px solid #cacaca;}
-.white-btn:hover {background-color: #ececec;}
+.white-btn {background-color: #fcfcfc; border: 1px solid #cacaca;}
+.white-btn:hover {background-color: #f5f5f5;}
 .red-btn {background-color: #ff6161; border: 1px solid #b41414;}
 .red-btn:hover {background-color: #ff5050; }
 
@@ -91,6 +91,7 @@ img { object-fit: cover;}
 .choose-box > div > div {text-align: center;display: flex;flex-direction: column;align-items: center; gap: 15px;}
 .choose-box > div > div > h3 {font-size: 28px;color: #333;}
 .choose-box > div > div > p {color: #808080;}
+.btn-box {margin-top: 30px;width: 1200px;display: flex;justify-content: start;align-items: center;gap: 10px;}
 
 /* 캘린더 */
 .calender-table { border-collapse: collapse; background-color: white;width: 1200px;;text-align: left; border-radius: 10px; box-shadow: 0px 0px 4px #cacaca;}
