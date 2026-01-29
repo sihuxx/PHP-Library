@@ -33,9 +33,11 @@
               <p class="store-date">등록일:<?= $store->create_at ?></p>
               <p class="store-des"><?= $store->des ?></p>
               <?php
-              if ($store->admin_idx != 0) {
+              if ($store->admin_idx != null) {
                 $admin_user = db::fetch("select * from user where idx = '$store->admin_idx'"); ?>
-                <p class="store-admin">관리자: <?= $admin_user->id ?></p>
+                <?php if($admin_user) { ?>
+                  <p class="store-admin">관리자: <?= $admin_user->id ?></p>
+                 <?php } ?>
               <?php } ?>
             </div>
           </div>

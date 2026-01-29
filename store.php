@@ -32,7 +32,6 @@
      <?php if(count($books) > 0) { ?>
        <?php foreach ($books as $book) {
         $userBook = db::fetchAll("select * from user_book where book_idx = $book->idx and is_rental = '1'");?>
-        ?>
         <div class="book">
           <?php if($book->stock - count($userBook) > 0) { ?>
           <div class="book-img">
