@@ -17,10 +17,11 @@
   <main class="form-box">
     <form action="./bookEditAction.php" method="post" enctype="multipart/form-data">
       <h1 class="form-title">책 수정</h1>
+      <input type="hidden" name="idx" value="<?=$book->idx?>">
       <div>
         <img src="<?=$book->img?>" alt="<?=$book->title?>">
         <label for="file">책 이미지</label>
-        <input type="file" name="file" id="file" required>
+        <input type="file" name="file" id="file">
       </div>
       <div>
         <label for="title">책 이름</label>

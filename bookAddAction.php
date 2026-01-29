@@ -9,7 +9,7 @@ $file = $_FILES["file"];
 $path = './images/books/' . $file["name"];
 
 if (move_uploaded_file($file["tmp_name"], $path)) {
-  db::exec("insert into book(title, des, img, stock, count, store_idx) values('$title', '$des', '$path', '$stock', '$stock', '$store_idx')");
+  db::exec("insert into book(title, des, img, stock, store_idx) values('$title', '$des', '$path', '$stock', '$store_idx')");
   alert("책이 등록되었습니다");
   move("./bookAdmin.php");
 } else {

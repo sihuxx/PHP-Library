@@ -14,7 +14,7 @@
     $user = $_SESSION["ss"];
     $store = db::fetch("select * from stores where admin_idx = '$user->idx'");
     $books = db::fetchAll("select * from book where store_idx = '$store->idx'");
-  ?>
+    ?>
   <main class="view-box">
     <header>
       <div>
@@ -24,15 +24,16 @@
       <a href="./bookAdd.php?idx=<?=$store->idx?>">+ <span>책 등록</span></a>
     </header>
     <div class="books">
-      <?php foreach($books as $book) { ?>
-        <div class="book">
+      <?php foreach($books as $book) { 
+      $userBook = db::fetchAll("select * from user_book where book_idx = $book->idx and is_rental = '1'");?>
+      <div class="book">
         <div class="book-img">
           <img src="<?=$book->img?>" alt="<?=$book->title?>">
         </div>
         <div class="book-content">
           <h3 class="book-title"><?=$book->title?></h3>
           <p class="book-des"><?=$book->des?></p>
-          <p class="book-stock">재고: <?=$book->count?>/<?=$book->stock?></p>
+          <p class="book-stock">재고: <?=$book->stock - count($userBook)?>/<?=$book->stock?></p>
         </div>
         <div class="book-btns">
           <a href="./bookEdit.php?idx=<?=$book->idx?>" class="btn">수정</a>
